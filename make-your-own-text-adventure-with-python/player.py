@@ -7,12 +7,12 @@ class Player:
         self.inventory = [
             items.Rock(),
             items.Dagger(),
-            'Gold (5)',
             items.CrustyBread()
         ]
-        self.x = 1
-        self.y = 2
+        self.x = world.start_tile_location[0]
+        self.y = world.start_tile_location[1]
         self.hp = 100
+        self.gold = 5
 
     def attack(self):
         best_weapon = self.most_powerful_weapon()
@@ -53,6 +53,8 @@ class Player:
         for item in self.inventory:
             print('* ' + str(item))
 
+        print("Gold: {}".format(self.gold))
+
         best_weapon = self.most_powerful_weapon()
         print("Your best weapon is your {}".format(best_weapon))
 
@@ -84,3 +86,7 @@ class Player:
 
     def move_west(self):
         self.move(dx=-1, dy=0)
+
+    def trade(self):
+        room = world.tile_at(self.x, self.y)
+        room.check_if_trade(self)

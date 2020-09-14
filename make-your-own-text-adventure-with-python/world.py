@@ -1,5 +1,6 @@
 import random
 import enemies
+import npc
 
 
 class MapTile:
@@ -76,6 +77,94 @@ class EnemyTile(MapTile):
                 self.enemy.damage, player.hp))
 
 
+class TraderTile(MapTile):
+    def __init__(self, x, y):
+        self.trader = npc.Trader()
+        super().__init__(x, y)
+
+    def trade(self, buyer, seller):
+        for i, item in enumerate(seller.invintory, 1):
+            print("{}. {} - {} Gold".format(i, item.name, item.value))
+        while True:
+            user_input = input("Choose an item or press Q to exit: ")
+            if user_input in ['Q', 'q']:
+                return
+            else:
+                try:
+                    choice = int(user_input)
+                    to_swap = seller.inventory[choice - 1]
+                    self.swap(seller, buyer, to_swap)
+                except ValueError:
+                    print("Invalid choice!")
+
+    def swap(self, seller, buyer, item):
+        if item.value > buyer.gold:
+            print("That's too expensive")
+            return
+        seller.inventory.remove(item)
+        buyer.inventory.append(item)
+        seller.gold = seller.gold + item.value
+        buyer.gold = buyer.gold - item.value
+        print("Trade complete!")
+
+    def check_if_trade(self, player):
+        while True:
+            print("Would you like to (B)uy, (S)ell, or (Q)uit?")
+            user_input = input()
+            if user_input in ['Q', 'q']:
+                return
+            elif user_input in ['B', 'b']:
+                print("Here's whats available to buy: ")
+                self.trade(buyer=player, seller=self.trader)
+            elif user_input in ['S', 's']:
+                print("Here's whats available to sell: ")
+                self.trade(buyer=self.trader, seller=player)
+            else:
+                print("Invalid choice!")
+
+    def intro_text(self):
+        return """
+        A frail not-quite-human, not-quite-creature squats in the corner
+        clinking his gold coins together. He looks willing to trade.
+        """
+
+
+class FindGoldTile(MapTile):
+    def __init__(self, x, y):
+        self.gold = random.randint(1, 50)
+        self.gold_claimed = False
+        super().__init__(x, y)
+
+    def modify_player(self, player):
+        if not self.gold_claimed:
+            self.gold_claimed = True
+            player.gold = player.gold + self.gold
+            print("+{} gold added.".format(self.gold))
+
+    def intro_text(self):
+        if self.gold_claimed:
+            return """
+            Another unremarkable part of the cave. You must forge onwards.
+            """
+        else:
+            return """
+            Someone dropped some gold. You pick it up.
+            """
+
+
+world_map = []
+start_tile_location = None
+
+tile_type_dict = {
+    "VT": VictoryTile,
+    "EN": EnemyTile,
+    "ST": StartTile,
+    "FG": FindGoldTile,
+    "TT": TraderTile,
+    "  ": None
+}
+
+
 def tile_at(x, y):
     if x < 0 or y < 0:
         return None
@@ -100,16 +189,31 @@ def is_dsl_valid(dsl):
     return True
 
 
-world_map = [
-    [None, VictoryTile(1, 0), None],
-    [None, EnemyTile(1, 1), None],
-    [BoringTile(0, 2), StartTile(1, 2), EnemyTile(2, 2)],
-    [None, EnemyTile(1, 3), None]
-]
+def parse_world_dsl():
+    if not is_dsl_valid(world_dsl):
+        raise SyntaxError("DSL is invalid!")
+
+    dsl_lines = world_dsl.splitlines()
+    dsl_lines = [x for x in dsl_lines if x]
+
+    for y, dsl_row in enumerate(dsl_lines):
+        row = []
+        dsl_cells = dsl_row.split("|")
+        dsl_cells = [c for c in dsl_cells if c]
+        for x, dsl_cell in enumerate(dsl_cells):
+            tile_type = tile_type_dict[dsl_cell]
+            if tile_type == StartTile:
+                global start_tile_location
+                start_tile_location = x, y
+            row.append(tile_type(x, y) if tile_type else None)
+
+        world_map.append(row)
+
 
 world_dsl = """
-|  |VT|  |
-|  |EN|  |
-|EN|ST|EN|
-|  |EN|  |
+|EN|EN|VT|EN|EN|
+|EN|  |  |  |EN|
+|EN|FG|EN|  |TT|
+|TT|  |ST|FG|EN|
+|FG|  |EN|  |FG|
 """
