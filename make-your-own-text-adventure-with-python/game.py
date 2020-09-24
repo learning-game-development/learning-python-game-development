@@ -50,11 +50,14 @@ def play():
     world.parse_world_dsl()
     player = Player()
 
-    while True:  # WARNING: Infinate loop!
+    while player.is_alive() and not player.victory:
         room = world.tile_at(player.x, player.y)
         print(room.intro_text())
         room.modify_player(player)
-        choose_action(room, player)
+        if player.is_alive() and not player.victory:
+            choose_action(room, player)
+        elif not player.is_alive():
+            print("Your journey has come to an early end!")
 
 
 play()

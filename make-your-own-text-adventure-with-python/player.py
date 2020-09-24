@@ -13,6 +13,7 @@ class Player:
         self.y = world.start_tile_location[1]
         self.hp = 100
         self.gold = 5
+        self.victory = False
 
     def attack(self):
         best_weapon = self.most_powerful_weapon()
@@ -90,3 +91,6 @@ class Player:
     def trade(self):
         room = world.tile_at(self.x, self.y)
         room.check_if_trade(self)
+
+    def is_alive(self):
+        return self.hp > 0
