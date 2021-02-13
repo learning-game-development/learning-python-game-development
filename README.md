@@ -7,7 +7,7 @@ Projects, samples and templates created to learn game development in Python.
 
 ## :beginner: Tutorials
 
-1. :o: [Make Your Own Text Adventure With Python](make-your-own-text-adventure-with-python/)
+1. :heavy_check_mark: [Make Your Own Text Adventure With Python](make-your-own-text-adventure-with-python/)
 2. :heavy_check_mark: [Introduction to Pygame Zero](introduction-to-pygame-zero/)
 
 ## Examples
