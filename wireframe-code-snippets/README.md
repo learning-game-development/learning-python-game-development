@@ -1,6 +1,6 @@
-# Wireframe Magazine Code Examples
+# :snake: Wireframe Magazine Code Examples
 
-## Running the Code
+## :bookmark_tabs: Running the Code
 
 ```shell
 pipenv shell
@@ -9,6 +9,6 @@ pgzrun <file_name.py>
 exit
 ```
 
-## Wireframe-1
+## :computer: Wireframe-1
 
 - [explosion.py](https://github.com/Wireframe-Magazine/Wireframe-1)

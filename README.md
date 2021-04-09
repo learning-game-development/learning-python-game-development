@@ -5,14 +5,17 @@ Projects, samples and templates created to learn game development in Python.
 :heavy_check_mark: Completed  
 :o: Incomplete
 
-## :beginner: Tutorials
+## :beginner: Online Tutorials
+
+1. :heavy_check_mark: [Introduction to Pygame Zero](introduction-to-pygame-zero/)
+
+## :books: Book Tutorials
 
 1. :heavy_check_mark: [Make Your Own Text Adventure With Python](make-your-own-text-adventure-with-python/)
-2. :heavy_check_mark: [Introduction to Pygame Zero](introduction-to-pygame-zero/)
 
-## Examples
+## Example Code
 
-- [Wireframe Magazine Code Examples](wireframe-code-snippets/)
+- :file_folder: [Wireframe Magazine Code Examples](wireframe-code-snippets/)
 
 ## :page_with_curl: License
 

@@ -1,8 +1,8 @@
-# Introduction to Pygame Zero
+# :mortar_board: :snake: Introduction to Pygame Zero
 
 :link: [tutorial](https://pygame-zero.readthedocs.io/en/stable/introduction.html)
 
-## Running the Code
+## :bookmark_tabs: Running the Code
 
 ```shell
 pipenv shell
