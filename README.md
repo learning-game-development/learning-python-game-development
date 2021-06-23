@@ -9,9 +9,11 @@ Projects, samples and templates created to learn game development in Python.
 
 1. :heavy_check_mark: [Introduction to Pygame Zero](introduction-to-pygame-zero/)
 
-## :books: Book Tutorials
+## :books: eBook Tutorials and Course
 
 1. :heavy_check_mark: [Make Your Own Text Adventure With Python](make-your-own-text-adventure-with-python/)
+2. :o: [Invent Your Own Computer Games with Python](invent-your-own-computer-games-with-python/)
+3. :o: [Teach Your Kids to Code](teach-your-kids-to-code/)
 
 ## Example Code
 
