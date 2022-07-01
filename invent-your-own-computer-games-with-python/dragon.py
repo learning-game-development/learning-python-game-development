@@ -2,7 +2,7 @@ import random
 import time
 
 
-def displayIntro():
+def display_intro():
     print("""\nYou are in a land full of dragons. In front of you,
 you see two caves. In one cave, the dragon is friendly
 and will share his treasure with you. The other dragon
@@ -10,7 +10,7 @@ is greedy and hungry, and will eat you on sight.""")
     print()
 
 
-def chooseCave():
+def choose_cave():
     cave = ''
     while cave != '1' and cave != '2':
         print("Which cave will you go into? (1 or 2)")
@@ -18,7 +18,7 @@ def chooseCave():
     return cave
 
 
-def checkCave(chosenCave):
+def check_cave(chosen_cave):
     print("You approach the cave...")
     time.sleep(2)
     print("It is dark and spooky...")
@@ -27,8 +27,8 @@ def checkCave(chosenCave):
     print()
     time.sleep(2)
 
-    friendlyCave = random.randint(1, 2)
-    if chosenCave == str(friendlyCave):
+    friendly_cave = random.randint(1, 2)
+    if chosen_cave == str(friendly_cave):
         print("Gives you his treasure!")
     else:
         print("Gobbles you down in one bite!")
@@ -36,9 +36,9 @@ def checkCave(chosenCave):
 
 playAgain = 'yes'
 while playAgain == 'yes' or playAgain == 'y':
-    displayIntro()
-    caveNumber = chooseCave()
-    checkCave(caveNumber)
+    display_intro()
+    caveNumber = choose_cave()
+    check_cave(caveNumber)
 
     print("\nDo you want to play again? (yes or no)")
     playAgain = input()
