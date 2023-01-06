@@ -2,5 +2,5 @@
 
 :link: [nostarch.com/inventwithpython](https://nostarch.com/inventwithpython)
 
-- Humbel Book Bundle -- BRAINIAC 2 PRESENTED BY NO STARCH
+- Humbel Book Bundle -- Brainiac 2 presented by No Starch
 - [TradePub courses and tutorials](https://github.com/learning-software-development/tradepub-tutorials) :rocket:
