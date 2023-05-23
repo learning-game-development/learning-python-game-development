@@ -1,7 +1,7 @@
-import pygame
+import pygame   # Setup
 
 pygame.init()
-screen = pygame.display.set_mode([600, 600])
+screen = pygame.display.set_mode([800, 600])
 
 keep_going = True
 pic = pygame.image.load("CrazySmile.bmp")
@@ -13,16 +13,28 @@ picy = 0
 
 BLACK = (0, 0, 0)
 
-while keep_going:
+timer = pygame.time.Clock()  # Timer for animation
+
+speedx = 5
+speedy = 5
+
+while keep_going:   # Game loop
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             keep_going = False
 
-    picx += 1  # Move the picture
-    picy += 1
+    picx += speedx   # Move the picture
+    picy += speedy
+
+    if picx <= 0 or picx + pic.get_width() >= 800:
+        speedx = -speedx
+
+    if picy <= 0 or picy + pic.get_height() >= 600:
+        speedy = -speedy
 
     screen.fill(BLACK)
     screen.blit(pic, (picx, picy))
     pygame.display.update()
+    timer.tick(60)  # Limit to 60 frames per second
 
-pygame.quit()
+pygame.quit()   # Exit
