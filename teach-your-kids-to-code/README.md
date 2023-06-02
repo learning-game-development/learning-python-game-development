@@ -16,4 +16,4 @@
 7. :heavy_check_mark: Functions: There’s a Name for That
 8. :heavy_check_mark: Timers and Animation: What Would Disney Do?
 9. :heavy_check_mark: User Interaction: Get into the Game
-10. :o: Game Programming: Coding for Fun
+10. :heavy_check_mark: Game Programming: Coding for Fun
