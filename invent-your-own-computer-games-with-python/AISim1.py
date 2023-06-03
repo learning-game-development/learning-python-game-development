@@ -203,7 +203,6 @@ def print_score(board, player_tile, computer_tile):
 
 
 def play_game(player_tile, computer_tile):
-    show_hints = False
     turn = who_goes_first()
     print('The ' + turn + ' will go first.')
 
@@ -223,30 +222,12 @@ def play_game(player_tile, computer_tile):
 
         elif turn == 'player':  # Player's turn
             if player_valid_moves != []:
-                if show_hints:
-                    valid_moves_board = get_board_with_valid_moves(board, player_tile)
-                    draw_board(valid_moves_board)
-                else:
-                    draw_board(board)
-                print_score(board, player_tile, computer_tile)
-
-                move = get_player_move(board, player_tile)
-                if move == 'quit':
-                    print('Thanks for playing!')
-                    sys.exit()  # Terminate the program.
-                elif move == 'hints':
-                    show_hints = not show_hints
-                    continue
-                else:
-                    make_move(board, player_tile, move[0], move[1])
+                move = get_computer_move(board, player_tile)
+                make_move(board, player_tile, move[0], move[1])
             turn = 'computer'
 
         elif turn == 'computer':  # Computer's turn
             if computer_valid_moves != []:
-                draw_board(board)
-                print_score(board, player_tile, computer_tile)
-
-                input('Press Enter to see the computer\'s move.')
                 move = get_computer_move(board, computer_tile)
                 make_move(board, computer_tile, move[0], move[1])
             turn = 'player'
