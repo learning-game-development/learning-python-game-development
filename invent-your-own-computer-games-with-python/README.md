@@ -26,7 +26,7 @@
 14. :heavy_check_mark: Caesar Cipher
 15. :heavy_check_mark: The Reversegam Game
 16. :heavy_check_mark: Reversegam AI Simulation
-17. :o: Creating Graphics
+17. :heavy_check_mark: Creating Graphics
 18. :o: Animating Graphics
 19. :o: Collision Detection
 20. :o: Using Sounds and Images
