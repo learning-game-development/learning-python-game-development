@@ -12,7 +12,7 @@ Projects, samples and templates created to learn game development in Python.
 ## :books: eBook Tutorials and Course
 
 1. :heavy_check_mark: [Make Your Own Text Adventure With Python](make-your-own-text-adventure-with-python/)
-2. :o: [Invent Your Own Computer Games with Python](invent-your-own-computer-games-with-python/)
+2. :heavy_check_mark: [Invent Your Own Computer Games with Python](invent-your-own-computer-games-with-python/)
 3. :heavy_check_mark: [Teach Your Kids to Code](teach-your-kids-to-code/)
 
 ## Example Code
