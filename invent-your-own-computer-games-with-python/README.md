@@ -29,5 +29,5 @@
 17. :heavy_check_mark: Creating Graphics
 18. :heavy_check_mark: Animating Graphics
 19. :heavy_check_mark: Collision Detection
-20. :o: Using Sounds and Images
+20. :heavy_check_mark: Using Sounds and Images
 21. :o: A Dodger Game with Sounds and Images
