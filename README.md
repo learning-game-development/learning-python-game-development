@@ -7,17 +7,19 @@ Projects, samples and templates created to learn game development in Python.
 
 ## :beginner: Online Tutorials
 
-1. :heavy_check_mark: [Introduction to Pygame Zero](introduction-to-pygame-zero/)
+1. :heavy_check_mark: [Introduction to Pygame Zero](introduction-to-pygame-zero)
+2. :heavy_check_mark: [Introduction to Pygame](introduction-to-pygame)
+3. :o: [Python Platformer Game Tutorial for Beginners](platformer-tutorial-for-beginners)
 
 ## :books: eBook Tutorials and Course
 
-1. :heavy_check_mark: [Make Your Own Text Adventure With Python](make-your-own-text-adventure-with-python/)
-2. :heavy_check_mark: [Invent Your Own Computer Games with Python](invent-your-own-computer-games-with-python/)
-3. :heavy_check_mark: [Teach Your Kids to Code](teach-your-kids-to-code/)
+1. :heavy_check_mark: [Make Your Own Text Adventure With Python](make-your-own-text-adventure-with-python)
+2. :heavy_check_mark: [Invent Your Own Computer Games with Python](invent-your-own-computer-games-with-python)
+3. :heavy_check_mark: [Teach Your Kids to Code](teach-your-kids-to-code)
 
 ## Example Code
 
-- :file_folder: [Wireframe Magazine Code Examples](wireframe-code-snippets/)
+- :file_folder: [Wireframe Magazine Code Examples](wireframe-code-snippets)
 
 ## :page_with_curl: License
 
