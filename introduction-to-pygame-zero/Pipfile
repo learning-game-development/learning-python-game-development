@@ -1,13 +1,11 @@
 [[source]]
-name = "pypi"
 url = "https://pypi.org/simple"
 verify_ssl = true
-
-[dev-packages]
-mu-editor = "*"
+name = "pypi"
 
 [packages]
-pgzero = "*"
+
+[dev-packages]
 
 [requires]
-python_version = "3.6"
+python_version = "3.12"

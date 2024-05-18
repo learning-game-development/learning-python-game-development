@@ -4,16 +4,22 @@
 
 ## :bookmark_tabs: Running the Code
 
-### Step 1: Install Virtual Environment
+### Step 1: Managing the Virtual Environment
+
+The packaging tool is `pipenv` and should be installed globally:
+
+```shell
+pip install --user pipenv
+```
+
+Create/open and close the virtual environment:
 
 ```shell
 pipenv shell
-pipenv install pgzero
-pgzrun introduction/intro.py
 exit
 ```
 
-### Step 2: Intstall and Run PyGmae Zero
+### Step 2: Intstall and Run PyGame
 
 ```shell
 pipenv install pgzero
@@ -31,5 +37,16 @@ mu-editor
 
 ```shell
 pipenv lock
-exit
+```
+
+Install dependencies in production:
+
+```shell
+pipenv install --ignore-pipfile
+```
+
+Other developers collaborating on the code:
+
+```shell
+pipenv install --dev
 ```
